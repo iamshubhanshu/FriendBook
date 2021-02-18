@@ -1,0 +1,88 @@
+* {
+    box-sizing: border-box;
+    margin: 0;
+}
+
+body {
+    margin: 0;
+    background-color: whitesmoke;
+    overflow: auto;
+    width: 100%;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.message_block,
+.menu_message_block {
+    width: 400px;
+    height: 525px;
+    background-color: whitesmoke;
+    color: #111;
+    z-index: 999;
+    position: absolute;
+    top: 60px;
+    left: 61px;
+    position: fixed;
+    padding: 4px;
+    box-shadow: 0px 8px 16px 0px rgba(0, 0, 0, 0.8);
+    border-radius: 4px;
+    border: 1px dotted #111;
+}
+
+.triangle::after,
+.menu_msg_block_triangle::after {
+    content: "";
+    position: absolute;
+    top: 170px;
+    left: -20px;
+    margin-top: -10px;
+    border-width: 10px;
+    border-style: solid;
+    border-color: transparent whitesmoke transparent transparent;
+}
+
+.menu_msg_container {
+    width: 100%;
+    height: 100%;
+    border: 1px double #111;
+    overflow: auto;
+}
+
+.menu_msg_header {
+    width: 100%;
+    height: 6%;
+    border: none;
+    border-bottom: 1px solid #111;
+}
+
+.menu_msg_area {
+    width: 100%;
+    height: 88%;
+    border: none;
+    background-color: whitesmoke;
+    overflow: auto;
+}
+
+.menu_msg_footer {
+    width: 100%;
+    height: 6%;
+    border: none;
+    border-top: 1px solid #111;
+}
+
+@media screen and (max-width:600px) {
+    .menu_message_block {
+        width: 95%;
+        height: 85%;
+        margin: 2%;
+        left: 1%;
+        top: 13%;
+    }
+    .menu_msg_block_triangle::after {
+        top: -10px;
+        left: 49%;
+        margin-left: -10px;
+        border-width: 10px;
+        border-style: solid;
+        border-color: transparent transparent whitesmoke transparent;
+    }
+}

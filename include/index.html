@@ -1,0 +1,97 @@
+<?php
+//get data
+$em = $_POST["email"];
+$pass = $_POST["password"];
+
+$sql = "SELECT id, email, mobile, upassword FROM userdata1";
+$result = $conn->query($sql);
+
+if($result->num_rows > 0){
+    while($row = $result->fetch_assoc()){
+        $email1 = $row["email"];
+        $pass1 = $row["upassword"];
+        $id1 = $id["id"];
+    }
+}
+
+if($email1 == $em && $pass1 == $pass){
+    //echo "<script>alert('login successfull');</script>";
+    //create session
+    $_SESSION["uemail"] = $email1;
+    $_SESSION["uid"] = $id1;
+    $_SESSION["loggedin_time"] = time();
+}
+else{
+    echo "<script>alert('invalid credentials');</script>";
+    header('location:index.html');
+}
+?>
+
+
+    <!DOCTYPE html>
+    <html>
+
+    <head>
+        <title>Friend BOOK</title>
+        <style>
+            body {
+                background-color: blueviolet;
+            }
+            
+            #header {
+                font-size: large;
+            }
+            
+            .container {
+                position: absolute;
+                top: 50%;
+                left: 50%;
+                transform: translateX(-50%)translateY(-50%);
+            }
+            
+            td {
+                margin: 40px;
+                padding: 40px;
+            }
+        </style>
+    </head>
+
+    <body>
+        <header id="header">Friend<b>BOOK</b></header>
+        <hr>
+        <div class="container">
+            <!--main container-->
+            <table border="1px">
+                <tr>
+                    <td>
+                        <img src="" alt="logo" />
+                    </td>
+                    <td>
+                        <div>
+                            <!--Login form submit-->
+                            <form action="login.php" method="post" id="form">
+                                <span><b>Login</b></span>
+                                <?php if(!$message = "") ?>
+                                <div class="message">
+                                    <?php echo $message?;>
+                            </div>
+                            <hr>
+                            <label>Email or phone : </label>
+                            <input type="" name="email" placeholder="Email/Mobile No."><br><br>
+                            <label>Password &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;: </label>
+                            <input type="password" name="password" placeholder="password"><br><br>
+                            <span id="alert"></span>
+                            <input type="submit" name="submit" value="Login">
+                        </form>
+                        <br>
+                        <a href="#">forgot password?</a>&nbsp;|
+                        <a href="#">create new account</a>
+                    </div>
+
+                </td>
+            </tr>
+        </table>
+    </div>
+</body>
+
+</html>
