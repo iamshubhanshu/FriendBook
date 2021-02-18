@@ -7,7 +7,7 @@ $id=$_SESSION["id"];
 <html>
 
 <head>
-    <title>Home</title>
+    <title>Home123</title>
     <meta name="viewport" content="width=device-width, initial-scale=1,user-scalable=no">
     <meta http-equiv="X-UA-Compatible" content="ie=edge">
     <script type="text/javascript" src="../js/https _ajax.googleapis.com_ajax_libs_jquery_3.5.1_jquery.min.js"></script>
