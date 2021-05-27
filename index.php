@@ -126,8 +126,8 @@ if(isset($_GET["destroy"])){
                     
                                     <input type="password" class="textbox" name="password" id="password" placeholder="Enter New Password" required>
                                     <div style="display:inline-block;">
-                                        <label for="date" style="">Pick Date :</label>
-                                        <input type="date" class="textbox" name="dob" id="dob" placeholder="dd/mm/yyyy" style="" required> 
+                                        <label for="date">Pick Date :</label>
+                                        <input type="date" class="textbox" name="dob" id="dob" placeholder="dd/mm/yyyy" required> 
                                     </div><br>
                     
 
